@@ -5,3 +5,4 @@
 /.venv/.gitignore
 /.venv/pyvenv.cfg
 /.idea/inspectionProfiles/profiles_settings.xml
+/test_code/
