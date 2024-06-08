@@ -1,0 +1,6 @@
+/.venv/
+/.venv/Include/
+/.venv/Lib/
+/.venv/Scripts/
+/.venv/.gitignore
+/.venv/pyvenv.cfg
