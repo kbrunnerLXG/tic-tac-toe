@@ -8,7 +8,6 @@ def main():
     board.create_board()
     chance = Chance()
     check = Checker()
-    # current_player = "X"
     while True:
         board.print_board()
         chance.get_move(board.current_board)
