@@ -10,14 +10,14 @@ def main():
     check = Checker()
     current_player = "X"
     while True:
-        current_board.print_board(current_board.board)
+        current_board.print_board()
         chance.get_move(current_board.board, current_player)
         if check.check_win(current_board.board, current_player):
-            current_board.print_board(current_board.board)
+            current_board.print_board()
             print(f"Player {current_player} wins!")
             break
         elif check.check_draw(current_board.board):
-            current_board.print_board(current_board.board)
+            current_board.print_board()
             print("The game is a draw!")
             break
 

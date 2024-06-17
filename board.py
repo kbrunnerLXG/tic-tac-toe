@@ -1,10 +1,9 @@
 class Board:
     def __init__(self) -> None:
         self.board = None
-        return self.board
 
-    def print_board(self, board):
-        for row in board:
+    def print_board(self):
+        for row in self.board:
             print(" | ".join(row))
             print("-" * 9)
 
