@@ -1,4 +1,4 @@
-class Player:
+class Chance:
     def __init__(self) -> None:
         pass
 

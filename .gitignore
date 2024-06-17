@@ -6,3 +6,4 @@
 /.venv/pyvenv.cfg
 /.idea/inspectionProfiles/profiles_settings.xml
 /test_code/
+/test_code/GPT.py
