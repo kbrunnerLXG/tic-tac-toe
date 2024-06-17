@@ -4,20 +4,20 @@ from check import Checker
 
 
 def main():
-    current_board = Board()
-    current_board.create_board()
+    board = Board()
+    board.create_board()
     chance = Chance()
     check = Checker()
     current_player = "X"
     while True:
-        current_board.print_board()
-        chance.get_move(current_board.board, current_player)
-        if check.check_win(current_board.board, current_player):
-            current_board.print_board()
+        board.print_board()
+        chance.get_move(board.current_board, current_player)
+        if check.check_win(board.current_board, current_player):
+            board.print_board()
             print(f"Player {current_player} wins!")
             break
-        elif check.check_draw(current_board.board):
-            current_board.print_board()
+        elif check.check_draw(board.current_board):
+            board.print_board()
             print("The game is a draw!")
             break
 
