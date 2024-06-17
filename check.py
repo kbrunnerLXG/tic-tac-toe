@@ -1,37 +1,18 @@
-class Check:
-    def __init__(self):
-        self.winner_found = None
-        self.winning_comb = None
-        self.pos_to_check = None
-        self.element_to_check = None
-        self.check_ok = None
-        self.error = None
-
-    def check_for_input(self, element_value, element_pos):
-        self.element_to_check = element_value
-        self.pos_to_check = element_pos
-        if int(self.pos_to_check[0]) <= 3 and int(self.pos_to_check[1]) <= 3:
-            if self.element_to_check != 'X' or self.element_to_check != '0':
-                self.check_ok = True
-                return self.check_ok, self.error
-            else:
-                # print('Invalid position retry')
-                self.error = 'Position already used'
-                return self.check_ok is False, self.error
-        else:
-            # print('Invalid position retry')
-            self.error = 'Invalid Position'
-            return self.check_ok is False, self.error
-
-    def check_winner(self, board,inputs):
-        self.winning_comb = [[(0, 0), (0, 1), (0, 2)],
-                             [(0, 0), (1, 0), (2, 0)],
-                             [(0, 0), (1, 1), (2, 2)],
-                             [(0, 2), (1, 2), (2, 2)],
-                             [(0, 2), (1, 1), (2, 0)],
-                             [(2, 0), (2, 1), (2, 2)],
-                             ]
-        for _ in self.winning_comb:
-            result = all(elem in inputs for elem in _)
-            if result:
-                return self.winner_found is True
+class Checker:
+    def __init__(self) -> None:
+        pass
+    def check_win(self,board, player):
+        # Check rows
+        for row in board:
+            if all(s == player for s in row):
+                return True
+        # Check columns
+        for col in range(3):
+            if all(board[row][col] == player for row in range(3)):
+                return True
+        # Check diagonals
+        if all(board[i][i] == player for i in range(3)) or all(board[i][2 - i] == player for i in range(3)):
+            return True
+        return False
+    def check_draw(self,board):
+        return all(cell != " " for row in board for cell in row)
